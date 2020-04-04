@@ -62,3 +62,10 @@ variable "revoke_rules_on_delete" {
   default     = true
   description = "Instruct Terraform to revoke all of the Security Groups attached ingress and egress rules before deleting the rule itself."
 }
+
+variable "create_default_egress_security_group_rule" {
+  type = bool
+  default = true
+  description = "Create default Egress Security Group rule"
+}
+

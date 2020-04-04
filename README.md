@@ -60,6 +60,7 @@ locals {
 ## Intro
 This module will create the following resources
 - Security Group
+- Security Group Default Egress (Optional / Default)
 - Security Group Rules using CIDR (Optional)
 - Security Group Rules using SG ID/Self (Optional)
 
@@ -78,6 +79,7 @@ This module will create the following resources
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | attributes | Additional attributes (e.g. `1`) | `list(string)` | `[]` | no |
+| create\_default\_egress\_security\_group\_rule | Create default Egress Security Group rule | `bool` | `true` | no |
 | environment | Environment, e.g. 'prod', 'staging', 'dev', 'pre-prod', 'UAT' | `string` | n/a | yes |
 | name | Solution name, e.g. 'app' or 'jenkins' | `string` | n/a | yes |
 | namespace | Namespace, which could be your team, business name or abbreviation, e.g. 'mag' or 'tar' | `string` | n/a | yes |
