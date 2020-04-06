@@ -3,6 +3,8 @@
 # terraform-aws-security-group
 Terraform (>= 0.12.0) module which creates Security Group in AWS 
 
+[![Build Status](https://dev.azure.com/MagnetarIT/terraform-aws-security-group/_apis/build/status/%5Btesting%5D%20terraform-aws-security-group?branchName=master)](https://dev.azure.com/MagnetarIT/terraform-aws-security-group/_build/latest?definitionId=13&branchName=master)
+
 - [Intro](#Intro)
 - [Example](#Example)
 - [Inputs](#Inputs)
