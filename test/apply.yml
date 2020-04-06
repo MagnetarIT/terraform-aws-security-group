@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  - master
+  
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+- group: core
+
+steps:
+- task: TerraformInstaller@0
+  inputs:
+    terraformVersion: '0.12.4'
+
+- powershell: |
+    # Set aws env vars
+    cd Application/examples
+    $env:AWS_ACCESS_KEY_ID="$(AWS_ACCESS_KEY_ID)"
+    $env:AWS_SECRET_ACCESS_KEY="$(AWS_SECRET_ACCESS_KEY)"
+    terraform init
+    terraform apply -auto-approve
+  displayName: Terraform apply
+
+  
