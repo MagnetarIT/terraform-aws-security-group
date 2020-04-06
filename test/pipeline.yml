@@ -1,8 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
   - master
   
@@ -24,7 +19,7 @@ steps:
     $env:AWS_SECRET_ACCESS_KEY="$(AWS_SECRET_ACCESS_KEY)"
     terraform init
     terraform apply -auto-approve
-  displayName: Terraform apply
+  displayName: Terraform apply [testing example]
 
 - powershell: |
     # Set aws env vars
@@ -33,4 +28,4 @@ steps:
     $env:AWS_SECRET_ACCESS_KEY="$(AWS_SECRET_ACCESS_KEY)"
     terraform init
     terraform destroy -auto-approve
-  displayName: Terraform destroy
+  displayName: Terraform destroy [testing example]
